@@ -200,7 +200,7 @@ struct GLFunctionPointers {
     /// Pointer to glScissor OpenGL function.
     void (*glScissor)(GLint, GLint, GLsizei, GLsizei);
     /// Pointer to glShaderSource OpenGL function.
-    void (*glShaderSource)(GLuint, GLsizei, const GLchar * const *, const GLint *);
+    void (*glShaderSource)(GLuint, GLsizei, const GLchar * const*, const GLint *);
     /// Pointer to glStencilFunc OpenGL function.
     void (*glStencilFunc)(GLenum, GLint, GLuint);
     /// Pointer to glStencilFuncSeparate OpenGL function.

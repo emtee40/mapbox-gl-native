@@ -110,7 +110,8 @@ void glLoader() {
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glRenderbufferStorage(args...); },
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glSampleCoverage(args...); },
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glScissor(args...); },
-        [](auto... args) { return QOpenGLContext::currentContext()->functions()->glShaderSource(args...); },
+        [](GLuint shader, GLsizei count, const GLchar * const * string, const GLint *length) {
+            return QOpenGLContext::currentContext()->functions()->glShaderSource(shader, count, const_cast<const GLchar **>(string), length); },
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glStencilFunc(args...); },
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glStencilFuncSeparate(args...); },
         [](auto... args) { return QOpenGLContext::currentContext()->functions()->glStencilMask(args...); },
