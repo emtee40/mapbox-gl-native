@@ -21,11 +21,6 @@
     #error Unsupported Apple platform
 #endif
 
-#if !defined(MBGL_USE_GLES2)
-#define glClearDepthf glClearDepth
-#define glDepthRangef glDepthRange
-#endif
-
 namespace mbgl {
 namespace gl {
 
@@ -48,7 +43,7 @@ void glLoader() {
         glCheckFramebufferStatus,
         glClear,
         glClearColor,
-        [](auto... args) { glClearDepthf(args...); },
+        glClearDepthf,
         glClearStencil,
         glColorMask,
         glCompileShader,
@@ -67,7 +62,7 @@ void glLoader() {
         glDeleteTextures,
         glDepthFunc,
         glDepthMask,
-        [](auto... args) { glDepthRangef(args...); },
+        glDepthRangef,
         glDetachShader,
         glDisable,
         glDisableVertexAttribArray,
@@ -126,7 +121,7 @@ void glLoader() {
         glRenderbufferStorage,
         glSampleCoverage,
         glScissor,
-        [](auto... args) { glShaderSource(args...); },
+        glShaderSource,
         glStencilFunc,
         glStencilFuncSeparate,
         glStencilMask,

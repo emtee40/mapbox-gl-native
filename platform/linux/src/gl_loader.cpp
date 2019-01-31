@@ -110,7 +110,7 @@ void glLoader() {
         glRenderbufferStorage,
         glSampleCoverage,
         glScissor,
-        [](auto... args) { glShaderSource(args...); },
+        glShaderSource,
         glStencilFunc,
         glStencilFuncSeparate,
         glStencilMask,
