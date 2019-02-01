@@ -8,15 +8,9 @@
     #include <OpenGLES/ES2/gl.h>
     #include <OpenGLES/ES2/glext.h>
 #elif TARGET_OS_MAC
-    #if MBGL_USE_GLES2
-        #define GL_GLEXT_PROTOTYPES
-        #include <GLES2/gl2.h>
-        #include <GLES2/gl2ext.h>
-    #else
-        #include <OpenGL/OpenGL.h>
-        #include <OpenGL/gl.h>
-        #include <OpenGL/glext.h>
-    #endif
+    #define GL_GLEXT_PROTOTYPES
+    #include <GLES2/gl2.h>
+    #include <GLES2/gl2ext.h>
 #else
     #error Unsupported Apple platform
 #endif
